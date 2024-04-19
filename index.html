@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=], initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+</head>
+<body>
+    <div class="content">
+        <button class="add-button">Add +</button>
+
+        <div class="add-box active">
+            <div class="topic">
+                <label for="topic">Topic : </label>
+                <input type="text" id="topic">
+            </div>
+            <div class="time-option">
+                <label for="hours">time : </label>
+
+                <select id="hours" value="00">
+                    <option value="00">00</option>
+                   
+                </select>
+
+                <span> : </span>
+
+                <select id="minit" >
+                    <option value="00">00</option>
+                </select>
+            </div>
+            
+            <button class="create">Create Item</button>
+        </div>
+
+        <div class="items-continer"></div>
+
+        </div>
+
+        <div class="appear">
+            <div class="edit-content">
+
+                <input type="text" value="new topic..." id="edit-topic" autofocus>
+    
+               <div class="edit-box">
+                    <select name="" id="edit-houre">
+                        <option value="00">00</option>
+                    </select>
+    
+                    <span>:</span>
+                    
+                    <select name="" id="edit-minit">
+                        <option value="00">00</option>
+                    </select>
+               </div>
+    
+               <div class="edit-buttons">
+                    <button class="close-edit">close</button>
+                    <button class="change">change</button>
+               </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script/variebel.js"></script>
+    <script src="script/function.js"></script>
+    <script src="script/index.js"></script>
+</body>
+</html>

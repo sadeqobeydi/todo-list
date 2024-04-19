@@ -1,0 +1,299 @@
+*{
+    padding: 0px;
+    margin: 0px;
+    box-sizing: border-box;
+    outline: none;
+    border: none;
+    background-color: transparent;
+}
+:root{
+    --bgcolor : #070b1b;
+}
+button{
+    cursor:pointer;
+}
+body{
+    background-size: 300% 300%;
+    width: 100vw;
+    background-color: var(--bgcolor);
+    padding:70px 0px;
+
+}
+.content{
+    width: 60%;
+    margin: auto;
+    user-select: none;
+    position: relative;
+}
+/*---------------------button add------------------------------ */
+button.add-button{
+    width: 100%;
+    font-size: 20px;
+    padding: 15px;
+    border-radius: 15px;
+    border: none;
+    color: #ff87f5;
+    border: 1px solid #ffb1f8;
+    box-shadow: 0px 0px 10px #ff87f5, inset 0px 0px 10px #ff87f5;
+    text-shadow: 0px 0px 10px #ff87f5;
+    transition: all 0.2s;
+    cursor: pointer;
+}
+button.add-button:hover{
+    box-shadow: 0px 0px 15px #ff87f5, inset 0px 0px 15px #ff87f5;
+}
+
+/* --------------------- box add ------------------------------ */
+.add-box{
+    width: 100%;
+    height: 0px;
+    margin-top: 20px;
+    border: 1px solid #d2fcbe;
+    border-radius: 15px;
+    box-shadow: 0px 0px 10px #93ff93, inset 0px 0px 10px #93ff93;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    overflow: hidden;
+    transition: all 0.8s;
+    opacity: 0;
+}
+.add-box.active{
+    opacity: 1;
+    height: 100px;
+}
+.add-box .time-option :where(select , label , span) , .add-box .topic :where(input , label){
+    color: #a9defd;
+
+    border-radius: 2px;
+}
+.add-box select , .add-box .topic input{
+    border: 1px solid #b7e4ff;
+    box-shadow:0px 0px 5px #70deff, inset 0px 0px 5px #70deff;
+}
+.add-box .time-option select {
+    padding: 3px;
+    width: 50px;
+    
+}
+.add-box .time-option select option{
+    padding: 3px;
+    color: #3a75ad;
+}
+
+.add-box .topic input{
+    padding: 5px; 
+    letter-spacing: 2px;
+}
+
+.add-box .create{
+    padding: 5px;
+    border: 1px solid #ffffa9;
+    box-shadow:0px 0px 5px #ffff53, inset 0px 0px 5px #ffff53;
+    color: #ffffa9;
+}
+.add-box .create:hover{
+    animation:creat 2s linear infinite ;
+}
+@keyframes creat {
+    0%{box-shadow:0px 0px 20px #53ff9b, inset 0px 0px 5px #ffff53;}
+    25%{box-shadow:0px 0px 20px #ffff53, inset 0px 0px 5px #ffff53;}
+    50%{box-shadow:0px 0px 20px #53ff9b, inset 0px 0px 5px #ffff53;}
+    75%{box-shadow:0px 0px 20px #ffff53, inset 0px 0px 5px #ffff53;}
+    100%{box-shadow:0px 0px 20px #53ff9b, inset 0px 0px 5px #ffff53;}
+}
+/* ------------------- items --------------------------------- */
+.items-continer{
+    width: 100%;
+    margin-top: 50px;
+}
+
+.items-continer .item{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border: 1px solid #87ffe5;
+    border-radius: 5px;
+    box-shadow: 0px 0px 10px #00ffc8, inset 0px 0px 5px #00ffc8;
+    transition: all 0.5s;
+    margin-bottom: 30px;
+    overflow: hidden;
+    height: 0px;
+    opacity: 0px;
+    transition: height 0.5s , opacity 1s , transform .5s , padding 0.5s , box-shadow 0.8s , border 0.8s;
+}
+.items-continer .item.create{
+    height: 59px;
+    padding: 10px;
+    animation: create 0.5s ease-out 1 0.4s;
+}
+.items-continer .item.active{
+    border: 1px solid #ffffff;
+    box-shadow: 0px 0px 10px #fff6a6, inset 0px 0px 5px #fff6a6;
+}
+@keyframes create {
+    0%{transform: translateX(0px); box-shadow: 0px 0px 0px #00ffc8, inset 0px 0px 0px #00ffc8;}
+    40%{transform: translateX(30px);}
+    70%{transform: translateX(-20px);box-shadow: 0px 0px 20px #00ffc8, inset 0px 0px 10px #00ffc8;}
+    90%{transform: translateX(10px);}
+    100%{transform: translateX(0px); box-shadow: 0px 0px 10px #00ffc8, inset 0px 0px 5px #00ffc8;}
+}
+.items-continer .item:hover{
+    transform: translateX(8px);
+}
+
+/* ////////// items button //////// */
+.items-continer .item button{
+    border-radius: 3px;
+    border: 1px solid;
+    padding: 10px;
+    transition: transform 0.5s;
+    margin: 0px 10px;
+    transform: scale(1 , 1)
+}
+.items-continer .item button:hover{
+    transform: scale( 1.2 , 1)
+}
+
+.items-continer .item button.trash , button.close-edit{
+    color: #ffbdbd;
+    border-color: #ffb9b9;
+    box-shadow:0px 0px 5px #ff2c2c, inset 0px 0px 5px #ff2c2c;
+
+}
+.items-continer .item button.edit , button.change{
+    color: #ffffa9;
+    border-color: #ffffa9;
+    box-shadow:0px 0px 5px #ffff53, inset 0px 0px 5px #ffff53;
+}
+.items-continer .item button.complated{
+    color: #a9ffb0;
+    border-color: #a9ffb0;
+    box-shadow:0px 0px 5px #39ff49, inset 0px 0px 5px #43ff53;
+}
+/* ////////// items topic and time //////// */
+.items-continer .item .topic-text{
+    margin-left: 10px;
+    color: #ffffff;
+    text-shadow: 0px 0px 10px rgb(147, 0, 160) , 0px 0px 15px rgb(160, 0, 61)  ;
+    font-size: 20px;
+    letter-spacing: 2px;
+}  
+.items-continer .item .time-text{
+    color: #ffccf0;
+    text-shadow: 0px 0px 6px #ff4a4a, 0px 0px 8px #3e4bff , 0px 0px 12px #fcff3b;
+    font-size: 20px;
+}  
+
+/* ---------------------editer -------------------------- */
+.appear{
+    display: none;
+    position: fixed;
+    left: 20px;
+    top: 50%;
+    transition: all 0.5s;
+    animation: appear 1s ease 1;
+}
+@keyframes appear {
+    0%{opacity: 0;}
+    100%{opacity: 1;}
+}
+.appear .edit-content{
+    padding: 15px;
+    width: 200px;
+    height: 200px;
+    background-color: var(--bgcolor);
+    position: absolute;
+    
+    border-radius: 20px;
+    box-shadow: 0px 0px 10px #c020ff, inset 0px 0px 5px #c020ff;
+    border: 1px solid #f690ff;
+    background-color: var(--bgcolor);
+}
+.appear .edit-content::before{
+    content: "";
+    display: inline-block;
+    width: 40px;
+    height: 40px; 
+    position: absolute;
+    top: 50%;
+    right: -10px;
+    transform: translateY(-50%)  rotate(-45deg);
+    box-shadow: 0px 0px 10px #c020ff, inset 0px 0px 5px #c020ff;
+    border: 1px solid #f690ff;
+    z-index: -1;
+    border-radius: 5px;
+}
+
+.appear.active{
+    display: block;
+}
+
+
+/* /////////////// edit input and select//////// */
+
+.edit-content  input{
+    display: block;
+    width: 94%;
+    margin: 0px auto;
+    padding: 10px;
+    border: 1px solid #ffffff;
+    box-shadow: 0px 0px 10px #fffed4, inset 0px 0px 5px #fffed4;
+    color: #b7dfff;
+}
+
+.edit-content .edit-box{
+    margin-top: 30px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.edit-content .edit-box select{
+    width: 40%;
+    margin: 5px;
+    border: 1px solid #ade1ff;
+    box-shadow: 0px 0px 10px #52bfff, inset 0px 0px 5px #52bfff;
+    color: #b7dfff;
+    border-radius: 5px;
+    
+}
+.edit-content .edit-box select option{ 
+    color: #3a75ad;
+}
+.edit-content .edit-box span{
+    color: #b7dfff;
+}
+.edit-content .edit-buttons{
+    width: 100%;
+    margin-top: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: end;
+
+}
+
+/* ////////////// edit buttons ///////////////////// */
+
+.edit-content .edit-buttons{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.edit-content .edit-buttons button{
+    padding: 10px;
+    border-radius: 5px;
+    transition: 0.3s;
+    margin: 0px 10px;
+}
+.edit-content .edit-buttons button:hover{
+    box-shadow: 0px 0px 10px;
+}
+.edit-content .edit-buttons button.change{
+    border: 1px solid #ffffa4;
+}
+.edit-content .edit-buttons button.close-edit{
+    border: 1px solid #ffbcbc; 
+}
